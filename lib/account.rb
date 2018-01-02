@@ -13,7 +13,7 @@ class Account
 
   def withdraw(amount)
     @balance -= amount
-    record_transaction(amount, 'withdrawl')
+    record_transaction(amount, 'withdrawal')
   end
 
   def record_transaction(amount, type)

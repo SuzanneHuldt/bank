@@ -19,11 +19,11 @@ describe Account do
     end
   end
 
-  context '#withdrawl' do
+  context '#withdrawal' do
     it 'removes the amount deposited from the balance' do
       expect { @account.withdraw(10) }.to change { @account.balance }.by(-10)
     end
-    it 'records the withdrawl in the transaction list' do
+    it 'records the withdrawal in the transaction list' do
       expect { @account.withdraw(10) }.to change { @account.transactions.length }.by(1)
     end
   end

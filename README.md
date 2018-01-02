@@ -27,5 +27,7 @@ date || credit || debit || balance
 ## Approach
 - all code on this project has been test-driven, with a failing test the first port of call for each feature implementation
 - the requirements are implemented in an object oriented style:
-- Instances of the class Account are responsible for withdrawl and deposit, and hold a balance (that is initialised as 0)
-- Instances of the class Bank are responsible for printing statements from an Account
+- Instances of the class Account are responsible for withdrawal and deposit, and hold a balance (that is initialised as 0)
+- Instances of the class Account also contain an array ("transactions") that holds information for each withdrawal or deposit. This information is held in the form of instances of the class Transaction, that exposes the attributes amount, type (deposit or withdrawal), date, and the balance of the account upon completion of each transaction.
+- New Transaction instances are created by instances of Account
+- Instances of the class Bank are responsible for printing statements from a given instance of Account
