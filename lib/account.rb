@@ -19,7 +19,7 @@ class Account
   end
 
   def record_transaction(amount, type)
-    transaction = Transaction.new(amount, type, Time.now.strftime('%d/%m/%Y'), @balance.to_s)
+    transaction = Transaction.new(amount, type, Time.now.strftime('%d/%m/%Y'), @balance)
     @transactions.unshift(transaction)
   end
 
