@@ -20,11 +20,16 @@ describe Account do
   end
 
   context '#withdrawal' do
-    it 'removes the amount deposited from the balance' do
+    xit 'removes the amount deposited from the balance' do
       expect { @account.withdraw(10) }.to change { @account.balance }.by(-10)
     end
-    it 'records the withdrawal in the transaction list' do
+    xit 'records the withdrawal in the transaction list' do
       expect { @account.withdraw(10) }.to change { @account.transactions.length }.by(1)
+    end
+    it 'cannot withdraw more money than is in the account' do
+      @account.balance = 50
+      @account.withdraw(60)
+      expect(@account.balance).to eq(50)
     end
   end
 end
