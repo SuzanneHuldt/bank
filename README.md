@@ -1,4 +1,4 @@
-##Bank Tech Test
+# Bank Tech Test
 
 - Practice tech test to write a banking program with the following specifications (as given in the Makers Academy requirements file):
 
