@@ -7,16 +7,17 @@ class Account
   end
 
   def deposit(amount)
-    record_transaction(amount, 'deposit')
     @balance += amount
+    record_transaction(amount, 'deposit')
   end
 
   def withdraw(amount)
-    record_transaction(amount, 'withdrawl')
     @balance -= amount
+    record_transaction(amount, 'withdrawl')
   end
 
   def record_transaction(amount, type)
-    @transactions.push([type, amount.to_s, Time.now.strftime("%d/%m/%Y")])
+    transaction = Transaction.new(amount, type, Time.now.strftime('%d/%m/%Y'), @balance.to_s)
+    @transactions.unshift(transaction)
   end
 end

@@ -6,8 +6,8 @@ describe Bank do
     @bank = Bank.new
   end
 
-  context "#print statement" do
-    xit "prints statement for given account" do
+  context '#print statement' do
+    xit 'prints statement for given account' do
       @account = Account.new
       @account.deposit(50)
       @account.withdraw(30)
