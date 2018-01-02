@@ -12,10 +12,7 @@ class Account
   end
 
   def withdraw(amount)
-    unless overdrawn?(amount)
-    @balance -= amount
-    record_transaction(amount, 'withdrawal')
-  end
+    return @balance -= amount, record_transaction(amount, 'withdrawal') unless overdrawn?(amount)
   end
 
   def record_transaction(amount, type)
@@ -24,6 +21,6 @@ class Account
   end
 
   def overdrawn?(amount)
-    return @balance - amount < 0
+    @balance - amount < 0
   end
 end
