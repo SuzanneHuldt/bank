@@ -23,6 +23,7 @@ date || credit || debit || balance
 - the tech test is completed with Ruby code
 - all testing is done with RSpec
 - code is linted with RuboCop
+- test coverage is assessed with SimpleCov
 
 ## Approach
 - all code on this project has been test-driven, with a failing test the first port of call for each feature implementation
@@ -31,3 +32,8 @@ date || credit || debit || balance
 - Instances of the class Account also contain an array ("transactions") that holds information for each withdrawal or deposit. This information is held in the form of instances of the class Transaction, that exposes the attributes amount, type (deposit or withdrawal), date, and the balance of the account upon completion of each transaction.
 - New Transaction instances are created by instances of Account
 - Instances of the class Bank are responsible for printing statements from a given instance of Account
+
+## User Guide
+- bundle install will install the relevant gem dependencies
+- to run tests and see test coverage run RSpec
+- the interface for the program is a command line repl (eg. irb): require account.rb, bank.rb, and transaction.rb in a repl to use
